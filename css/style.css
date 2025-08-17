@@ -21,7 +21,7 @@ body {
 /* 언어 선택 버튼 */
 .language-selector {
     position: fixed;
-    top: 20px;
+    top: 80px;  /* 70px에서 80px로 변경 */
     right: 20px;
     z-index: 1001;
     display: flex;
@@ -30,6 +30,21 @@ body {
     backdrop-filter: blur(10px);
     border-radius: 25px;
     padding: 8px;
+}
+
+/* 모바일에서 더 아래로 */
+@media (max-width: 768px) {
+    .language-selector {
+        top: 90px;  /* 모바일에서 더 아래로 */
+        right: 10px;
+        flex-wrap: wrap;
+        max-width: 200px;
+    }
+    
+    .lang-btn {
+        font-size: 0.7rem;
+        padding: 6px 10px;
+    }
 }
 
 .lang-btn {
