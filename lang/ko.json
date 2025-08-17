@@ -1,1 +1,27 @@
-
+{
+  "page": {
+    "title": "RichCanopy - PCX, NMAX 전용 프리미엄 바이크 캐노피",
+    "description": "PCX, NMAX 전용 프리미엄 바이크 캐노피 제작 및 설치 전문"
+  },
+  "nav": {
+    "home": "홈",
+    "products": "제품",
+    "features": "특징", 
+    "blog": "작업일지",
+    "contact": "문의",
+    "consultation": "상담 신청"
+  },
+  "hero": {
+    "title1": "프리미엄",
+    "title2": "바이크 캐노피", 
+    "title3": "컬렉션",
+    "description": "PCX, NMAX 전용 맞춤형 설계로 완벽한 방풍과 자외선 차단을 제공합니다.",
+    "view_products": "제품 둘러보기",
+    "free_consultation": "무료 상담"
+  },
+  "stats": {
+    "installations": "설치 완료",
+    "satisfaction": "만족도", 
+    "warranty": "품질보증"
+  }
+}
