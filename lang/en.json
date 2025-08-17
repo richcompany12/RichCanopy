@@ -1,1 +1,27 @@
-
+{
+  "page": {
+    "title": "RichCanopy - Premium Bike Canopy for PCX, NMAX",
+    "description": "Professional manufacture and installation of premium bike canopies for PCX, NMAX"
+  },
+  "nav": {
+    "home": "Home",
+    "products": "Products",
+    "features": "Features", 
+    "blog": "Work Log",
+    "contact": "Contact",
+    "consultation": "Free Consultation"
+  },
+  "hero": {
+    "title1": "Premium",
+    "title2": "Bike Canopy", 
+    "title3": "Collection",
+    "description": "Custom-designed for PCX and NMAX models, providing perfect wind protection and UV blocking. Experience safe and comfortable riding with professional installation and A/S service.",
+    "view_products": "View Products",
+    "free_consultation": "Free Consultation"
+  },
+  "stats": {
+    "installations": "Installations",
+    "satisfaction": "Satisfaction", 
+    "warranty": "Warranty"
+  }
+}
