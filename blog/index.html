@@ -1,1 +1,200 @@
+<!DOCTYPE html>
+<html lang="ko" id="html-lang">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-translate>작업일지 - RichCanopy</title>
+    <meta name="description" data-translate content="바이크 캐노피 설치 과정과 제작 노하우를 공유합니다">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .blog-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 120px 20px 80px;
+        }
+        
+        .blog-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .blog-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #ffffff 0%, #a0a0a0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .blog-subtitle {
+            color: #a0a0a0;
+            font-size: 1.2rem;
+        }
+        
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .blog-post-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .blog-post-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(102, 126, 234, 0.3);
+        }
+        
+        .post-date {
+            color: #667eea;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .post-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: white;
+            margin-bottom: 1rem;
+            line-height: 1.4;
+        }
+        
+        .post-excerpt {
+            color: #a0a0a0;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        
+        .post-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .post-tag {
+            background: rgba(102, 126, 234, 0.2);
+            color: #667eea;
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .back-to-home {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            transition: color 0.3s ease;
+        }
+        
+        .back-to-home:hover {
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <!-- 언어 선택 버튼 -->
+    <div class="language-selector">
+        <button onclick="changeLanguage('ko')" class="lang-btn active" data-lang="ko">한국어</button>
+        <button onclick="changeLanguage('en')" class="lang-btn" data-lang="en">English</button>
+        <button onclick="changeLanguage('ja')" class="lang-btn" data-lang="ja">日本語</button>
+        <button onclick="changeLanguage('zh')" class="lang-btn" data-lang="zh">中文</button>
+        <button onclick="changeLanguage('vi')" class="lang-btn" data-lang="vi">Tiếng Việt</button>
+        <button onclick="changeLanguage('th')" class="lang-btn" data-lang="th">ไทย</button>
+    </div>
 
+    <div class="blog-container">
+        <a href="../index.html" class="back-to-home">
+            ← <span data-translate>홈으로 돌아가기</span>
+        </a>
+        
+        <div class="blog-header">
+            <h1 class="blog-title" data-translate>작업일지</h1>
+            <p class="blog-subtitle" data-translate>바이크 캐노피 설치 과정과 제작 노하우를 공유합니다</p>
+        </div>
+        
+        <div class="blog-grid" id="blog-posts">
+            <!-- 블로그 포스트들이 여기에 동적으로 로드됩니다 -->
+        </div>
+    </div>
+
+    <script src="../js/config.js"></script>
+    <script src="../js/translator.js"></script>
+    <script>
+        // 블로그 포스트 데이터
+        const blogPosts = [
+            {
+                id: 'pcx-canopy-install',
+                date: '2025-01-15',
+                title: 'PCX 125 맞춤 캐노피 제작 및 설치',
+                excerpt: '강남구 고객님의 PCX 125에 맞춤형 캐노피를 설치했습니다. 제작부터 설치까지의 전 과정을 상세히 기록했습니다.',
+                tags: ['PCX', '설치사례', '제작과정'],
+                filename: '2025-01-15-pcx-canopy-install.md'
+            },
+            {
+                id: 'nmax-upgrade',
+                date: '2025-01-10', 
+                title: 'NMAX 155 윈드스크린 업그레이드',
+                excerpt: '기존 순정 윈드스크린을 프리미엄 캐노피로 교체한 사례입니다. 설치 전후 비교와 성능 개선 효과를 확인해보세요.',
+                tags: ['NMAX', '업그레이드', '성능개선'],
+                filename: '2025-01-10-nmax-upgrade-review.md'
+            },
+            {
+                id: 'manufacturing-process',
+                date: '2025-01-05',
+                title: '프리미엄 캐노피 제작 과정 공개',
+                excerpt: '소재 선택부터 완성까지, RichCanopy의 전문적인 제작 과정을 투명하게 공개합니다. 품질에 대한 우리의 철학을 확인하세요.',
+                tags: ['제작과정', '품질관리', '소재'],
+                filename: '2025-01-05-manufacturing-process.md'
+            }
+        ];
+
+        // 블로그 포스트 렌더링
+        function renderBlogPosts() {
+            const container = document.getElementById('blog-posts');
+            
+            blogPosts.forEach(post => {
+                const postCard = document.createElement('div');
+                postCard.className = 'blog-post-card';
+                postCard.onclick = () => openPost(post.filename);
+                
+                postCard.innerHTML = `
+                    <div class="post-date">${post.date}</div>
+                    <h3 class="post-title" data-translate>${post.title}</h3>
+                    <p class="post-excerpt" data-translate>${post.excerpt}</p>
+                    <div class="post-tags">
+                        ${post.tags.map(tag => `<span class="post-tag" data-translate>${tag}</span>`).join('')}
+                    </div>
+                `;
+                
+                container.appendChild(postCard);
+            });
+        }
+
+        // 포스트 열기 (나중에 구현)
+        function openPost(filename) {
+            alert(`포스트 "${filename}"를 열 예정입니다. (다음 단계에서 구현)`);
+        }
+
+        // 페이지 로드 시 실행
+        document.addEventListener('DOMContentLoaded', () => {
+            renderBlogPosts();
+        });
+    </script>
+</body>
+</html>
